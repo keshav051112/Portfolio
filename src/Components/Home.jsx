@@ -57,9 +57,6 @@ const Home = () => {
         <span className='block '>I'm Keshav Suryawanshi,</span> 
         frontend developer based in INDIA.
       </animated.h1>
-      <p className="text-center text-lg leading-7 w-4/5 mx-auto">
-        I’m a Frontend Developer skilled in building responsive and dynamic user interfaces. <span className='block'>I turn design ideas into high-performance web applications with clean, efficient code.</span>
-      </p>
       <div className="flex gap-4 mb-8">
         <AnchorLink className="px-6 py-4 text-center  text-base font-medium text-white bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 rounded-full transition-transform duration-300 hover:scale-105 hover:border-2 border-white" offset={50} href="#contact">
           Connect with me

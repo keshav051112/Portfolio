@@ -8,7 +8,7 @@ const Footer = () => {
       <div className='container mx-auto px-6 lg:px-8'>
         <div className='flex flex-col lg:flex-row justify-between items-center gap-8'>
           <div className='flex flex-col items-center lg:items-start gap-4 lg:flex-grow'>
-            <img src={footer_logo} alt="Logo" className='w-24 h-auto object-cover' />
+            
             <p className='text-lg text-center lg:text-left'>
               Thank you for your visit @keshavSuryawanshi
             </p>

@@ -52,7 +52,6 @@ const About = () => {
       </div>
       
       <div className="flex flex-wrap justify-center gap-6">
-        <Achievement title="2+" description="Years of Experience" />
         <Achievement title="20+" description="Projects Completed" />
         <Achievement title="100+" description="DSA Questions Solved" />
       </div>

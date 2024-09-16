@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { motion } from 'framer-motion';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
         {isOpen ? 'Close' : 'Menu'}
       </button>
       <ul
-        className={`fixed top-0 right-0 w-64 h-full gap-10 bg-gray-800 bg-opacity-90 flex flex-col items-start p-4 space-y-4 md:space-y-0 md:space-x-4 md:bg-transparent md:opacity-100 transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:translate-x-0 md:flex md:relative md:flex-row`}
+        className={`fixed top-0 right-0 w-64 h-full gap-10 bg-gray-800 bg-opacity-90 flex flex-col items-start p-4 space-y-4 md:space-y-0 md:space-x-4 md:bg-transparent md:opacity-100 transition-transform duration-300 ${isOpen ? 'translate-x-0 ' : 'translate-x-full '} md:translate-x-0 md:flex md:relative md:flex-row`}
       >
         <li>
           <AnchorLink
