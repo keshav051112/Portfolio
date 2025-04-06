@@ -16,7 +16,7 @@ const projectsdata = [
     name: 'CryptoPlace', 
     description: 'go-to website for real-time cryptocurrency rates and price updates, providing accurate and live data for informed trading decisions.', 
     image: project2,
-    url :'https://github.com/keshav051112/Cryptoplace.git'
+    url :'https://cryptoplace-git-main-keshavsuryawanshi671-gmailcoms-projects.vercel.app/'
   },
   { 
     name: 'WeatherApp', 
