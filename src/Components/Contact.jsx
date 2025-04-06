@@ -14,12 +14,12 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-
+  
     formData.append("access_key", "807144d7-b6d0-403e-b3e7-423fbfb4cd79");
-
+  
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
-
+  
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -28,12 +28,12 @@ const Contact = () => {
       },
       body: json,
     }).then((res) => res.json());
-
+  
     if (res.success) {
       alert(res.message);
+      event.target.reset(); 
     }
   };
-
   return (
     <section id="contact" className="contact min-h-screen mt-10 flex items-center justify-center text-white py-16">
       <div className="container mx-auto px-4">
