@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import project1 from '../assets/Screenshot (409).png'
+import project1 from '../assets/Screenshot (572).png'
 import project2 from '../assets/Screenshot (412).png'
 import Weather from '../assets/Screenshot (408).png'
 import Imagegallery from '../assets/Screenshot (413).png'
 
 const projectsdata = [
   { 
-    name: 'StudyShare', 
-    description: 'Crowdsource Study Resource Sharing Platform is an innovative solution designed to revolutionize the way students and educators access and share academic resources.', 
-    image: project1
+    name: 'Job-Portal Web Application', 
+    description: 'A full-stack platform connecting job seekers and employers. Features include profile creation, resume uploads, job search, application tracking, and real-time notifications. Built with React.js, Node.js, Express, MongoDB, and Clerk for authentication',
+    image: project1,
+     url :'https://job-portal-app-fullstack-client.vercel.app/'
   },
   { 
     name: 'CryptoPlace', 

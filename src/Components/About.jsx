@@ -38,9 +38,9 @@ const About = () => {
           transition={{ duration: 1 }}
         >
           <p className="text-base md:text-lg leading-relaxed">
-            I’m Keshav Suryawanshi, a passionate Front-End Developer with a strong focus on creating visually appealing and user-friendly web interfaces.
-             I enjoy bringing ideas to life through clean, efficient code and staying up-to-date with the latest trends in web development.
-          </p>
+          
+      A Full Stack Developer with a passion for building scalable web applications from the ground up. From creating responsive user interfaces to developing robust backend systems, I deliver clean, efficient, and maintainable code across the stack.
+      </p>
           
           <div className="flex flex-col gap-3">
             <SkillBar skill="HTML & CSS" progress="50%" />

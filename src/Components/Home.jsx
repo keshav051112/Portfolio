@@ -55,7 +55,7 @@ const Home = () => {
       </div>
       <animated.h1 className="text-center  text-5xl font-semibold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent" style={props}>
         <span className='block '>I'm Keshav Suryawanshi,</span> 
-        frontend developer based in INDIA.
+        FULL STACK WEB DEVELOPER
       </animated.h1>
       <div className="flex gap-4 mb-8">
         <AnchorLink className="px-6 py-4 text-center  text-base font-medium text-white bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 rounded-full transition-transform duration-300 hover:scale-105 hover:border-2 border-white" offset={50} href="#contact">
