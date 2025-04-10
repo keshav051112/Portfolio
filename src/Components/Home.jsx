@@ -54,7 +54,7 @@ const Home = () => {
         </a>
       </div>
       <animated.h1 className="text-center  text-5xl font-semibold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent" style={props}>
-        <span className='block '>I'm Keshav Suryawanshi,</span> 
+        <span className='block text-gray-300 '>I'm Keshav Suryawanshi,</span> 
         FULL STACK WEB DEVELOPER
       </animated.h1>
       <div className="flex gap-4 mb-8">
