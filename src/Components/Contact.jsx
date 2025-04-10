@@ -76,10 +76,7 @@ const Contact = () => {
                 <img src={mail_icon} alt="Email" className="mr-3 w-8 h-8" />
                 <p>keshavsuryawanshi671@gmail.com</p>
               </div>
-              <div className="contact-detail flex items-center mb-4">
-                <img src={call_icon} alt="Phone" className="mr-3 w-8 h-8" />
-                <p>+91-9657590975</p>
-              </div>
+            
               <div className="contact-detail flex items-center">
                 <img src={location_icon} alt="Location" className="mr-3 w-8 h-8" />
                 <p>Thane Maharashtra-421004, India</p>
