@@ -1,10 +1,80 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 import profile_img from '../assets/profilenew.png.jpg';
 
+const TypingText = ({ text, trigger }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!trigger || index >= text.length) return;
+    const timeout = setTimeout(() => {
+      setDisplayedText((prev) => prev + text.charAt(index));
+      setIndex((prev) => prev + 1);
+    }, 30);
+    return () => clearTimeout(timeout);
+  }, [index, trigger, text]);
+
+  return (
+    <p className="text-base md:text-lg leading-relaxed whitespace-pre-wrap">{displayedText}</p>
+  );
+};
+
+const skillList = [
+  { skill: "HTML & CSS", progress: "50%" },
+  { skill: "React JS", progress: "70%" },
+  { skill: "JavaScript", progress: "50%" },
+  { skill: "JAVA", progress: "75%" },
+];
+
+const skillVariants = {
+  hidden: { width: 0 },
+  visible: (i) => ({
+    width: skillList[i].progress,
+    transition: {
+      delay: i * 0.5,
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const AnimatedSkillBar = ({ skill, progress, index, trigger }) => (
+  <div className="flex items-center gap-3 w-full">
+    <p className="text-base font-semibold w-32">{skill}</p>
+    <div className="flex-1 bg-gray-600 h-1.5 rounded-full overflow-hidden">
+      <motion.div
+        className="bg-gradient-to-r from-blue-400 to-indigo-600 h-full rounded-full"
+        custom={index}
+        variants={skillVariants}
+        initial="hidden"
+        animate={trigger ? "visible" : "hidden"}
+      />
+    </div>
+  </div>
+);
+
+const Achievement = ({ title, description }) => (
+  <motion.div
+    className="flex flex-col items-center gap-1"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 1 }}
+  >
+    <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent">{title}</h2>
+    <p className="text-base">{description}</p>
+  </motion.div>
+);
+
 const About = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
+  const aboutText = `A Full Stack Developer with a passion for building scalable web applications from the ground up. From creating responsive user interfaces to developing robust backend systems, I deliver clean, efficient, and maintainable code across the stack.`;
+
   return (
     <section
+      ref={ref}
       id="about"
       className="flex flex-col items-center justify-center gap-12 py-5 px-3 md:px-12 text-white shadow-lg rounded-2xl border-2 border-transparent transition-transform duration-200 ease-in-out hover:border-white hover:scale-105 max-w-4xl mx-auto mb-10 mt-20"
     >
@@ -16,12 +86,13 @@ const About = () => {
       >
         About Me
       </motion.h1>
-      
+
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         <motion.div
           className="flex-shrink-0"
           initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
           <img
@@ -30,27 +101,29 @@ const About = () => {
             className="w-64 h-auto rounded-xl shadow-md transition-transform transform hover:scale-105"
           />
         </motion.div>
-        
+
         <motion.div
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-6 w-full"
           initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <p className="text-base md:text-lg leading-relaxed">
-          
-      A Full Stack Developer with a passion for building scalable web applications from the ground up. From creating responsive user interfaces to developing robust backend systems, I deliver clean, efficient, and maintainable code across the stack.
-      </p>
-          
-          <div className="flex flex-col gap-3">
-            <SkillBar skill="HTML & CSS" progress="50%" />
-            <SkillBar skill="React JS" progress="70%" />
-            <SkillBar skill="JavaScript" progress="50%" />
-            <SkillBar skill="JAVA" progress="75%" />
+          <TypingText text={aboutText} trigger={isInView} />
+          <div className="flex flex-col gap-3 mt-4">
+            {skillList.map((skill, index) => (
+              <AnimatedSkillBar
+                key={skill.skill}
+                skill={skill.skill}
+                progress={skill.progress}
+                index={index}
+                trigger={isInView}
+              />
+            ))}
           </div>
         </motion.div>
       </div>
-      
+
       <div className="flex flex-wrap justify-center gap-6">
         <Achievement title="20+" description="Projects Completed" />
         <Achievement title="100+" description="DSA Questions Solved" />
@@ -58,26 +131,5 @@ const About = () => {
     </section>
   );
 };
-
-const SkillBar = ({ skill, progress }) => (
-  <div className="flex items-center gap-3">
-    <p className="text-base font-semibold">{skill}</p>
-    <div className="flex-1 bg-gray-600 h-1.5 rounded-full">
-      <div className="bg-gradient-to-r from-blue-400 to-indigo-600 h-full rounded-full" style={{ width: progress }}></div>
-    </div>
-  </div>
-);
-
-const Achievement = ({ title, description }) => (
-  <motion.div
-    className="flex flex-col items-center gap-1"
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-  >
-    <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent">{title}</h2>
-    <p className="text-base">{description}</p>
-  </motion.div>
-);
 
 export default About;
