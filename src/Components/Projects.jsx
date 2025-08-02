@@ -6,6 +6,7 @@ import project2 from '../assets/Screenshot (412).png';
 import Weather from '../assets/Screenshot (408).png';
 import Imagegallery from '../assets/Screenshot (413).png';
 import github from '../assets/github-light.svg';
+import hotelStay from '../assets/Screenshot (611).png'
 
 const projectsdata = [
   {
@@ -25,14 +26,17 @@ const projectsdata = [
       'https://cryptoplace-git-main-keshavsuryawanshi671-gmailcoms-projects.vercel.app/',
     githubUrl: 'https://github.com/keshav051112/CryptoPlace',
   },
+ 
   {
-    name: 'WeatherApp',
-    description:
-      'A user-friendly weather app that provides real-time, accurate forecasts and detailed weather insights to keep you informed and prepared.',
-    image: Weather,
-    githubUrl: 'https://github.com/keshav051112/Weather-app',
-  },
-  {
+  name: 'HotelStay',
+  description:
+    'A full-featured hotel booking web application allowing users to explore hotels, check availability, book rooms, and manage reservations with an intuitive UI.',
+  image: hotelStay, 
+  liveUrl:
+      'https://hotel-bookings-delta.vercel.app/',
+  githubUrl: 'https://github.com/keshav051112/Hotel-bookings.git',
+},
+ {
     name: 'ImageGallery',
     description:
       'An interactive image gallery project that dynamically fetches and displays high-quality images in real-time.',
